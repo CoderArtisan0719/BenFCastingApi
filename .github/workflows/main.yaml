@@ -1,11 +1,10 @@
 name: Build Gradle Project
-on:
-  push:
-  pull-request:
+on: [push, pull_request]
 permissions:
   contents: read
   pull-requests: read
 jobs:
+  name: Test & Build Project
   test:
     runs-on: ubuntu-latest
     steps:
