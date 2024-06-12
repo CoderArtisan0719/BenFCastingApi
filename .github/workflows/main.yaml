@@ -1,5 +1,5 @@
 name: Build Gradle Project
-on: [push, pull_request]
+on: [pull_request]
 permissions:
   contents: read
   pull-requests: read
