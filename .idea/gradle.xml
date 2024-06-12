@@ -4,55 +4,223 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
+        <compositeConfiguration>
+          <compositeBuild compositeDefinitionSource="SCRIPT">
+            <builds>
+              <build path="$PROJECT_DIR$/dal" name="dal">
+                <projects>
+                  <project path="$PROJECT_DIR$/dal" />
+                </projects>
+              </build>
+              <build path="$PROJECT_DIR$/dalinterface" name="dalinterface">
+                <projects>
+                  <project path="$PROJECT_DIR$/dalinterface" />
+                </projects>
+              </build>
+              <build path="$PROJECT_DIR$/factory" name="factory">
+                <projects>
+                  <project path="$PROJECT_DIR$/factory" />
+                </projects>
+              </build>
+              <build path="$PROJECT_DIR$/logic" name="logic">
+                <projects>
+                  <project path="$PROJECT_DIR$/logic" />
+                </projects>
+              </build>
+              <build path="$PROJECT_DIR$/logicinterface" name="logicinterface">
+                <projects>
+                  <project path="$PROJECT_DIR$/logicinterface" />
+                </projects>
+              </build>
+              <build path="$PROJECT_DIR$/model" name="model">
+                <projects>
+                  <project path="$PROJECT_DIR$/model" />
+                </projects>
+              </build>
+              <build path="$PROJECT_DIR$/repository" name="repository">
+                <projects>
+                  <project path="$PROJECT_DIR$/repository" />
+                </projects>
+              </build>
+              <build path="$PROJECT_DIR$/repositoryinterface" name="repositoryinterface">
+                <projects>
+                  <project path="$PROJECT_DIR$/repositoryinterface" />
+                </projects>
+              </build>
+            </builds>
+          </compositeBuild>
+        </compositeConfiguration>
         <option name="externalProjectPath" value="$PROJECT_DIR$/api" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/api" />
+            <option value="$PROJECT_DIR$/dal" />
+            <option value="$PROJECT_DIR$/dalinterface" />
+            <option value="$PROJECT_DIR$/factory" />
+            <option value="$PROJECT_DIR$/logic" />
+            <option value="$PROJECT_DIR$/logicinterface" />
+            <option value="$PROJECT_DIR$/model" />
+            <option value="$PROJECT_DIR$/repository" />
+            <option value="$PROJECT_DIR$/repositoryinterface" />
           </set>
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
+        <compositeConfiguration>
+          <compositeBuild compositeDefinitionSource="SCRIPT">
+            <builds>
+              <build path="$PROJECT_DIR$/dalinterface" name="dalinterface">
+                <projects>
+                  <project path="$PROJECT_DIR$/dalinterface" />
+                </projects>
+              </build>
+              <build path="$PROJECT_DIR$/model" name="model">
+                <projects>
+                  <project path="$PROJECT_DIR$/model" />
+                </projects>
+              </build>
+            </builds>
+          </compositeBuild>
+        </compositeConfiguration>
         <option name="externalProjectPath" value="$PROJECT_DIR$/dal" />
         <option name="gradleHome" value="" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/dal" />
+            <option value="$PROJECT_DIR$/dalinterface" />
+            <option value="$PROJECT_DIR$/model" />
           </set>
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
+        <compositeConfiguration>
+          <compositeBuild compositeDefinitionSource="SCRIPT">
+            <builds>
+              <build path="$PROJECT_DIR$/model" name="model">
+                <projects>
+                  <project path="$PROJECT_DIR$/model" />
+                </projects>
+              </build>
+            </builds>
+          </compositeBuild>
+        </compositeConfiguration>
         <option name="externalProjectPath" value="$PROJECT_DIR$/dalinterface" />
         <option name="gradleHome" value="" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/dalinterface" />
+            <option value="$PROJECT_DIR$/model" />
           </set>
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
+        <compositeConfiguration>
+          <compositeBuild compositeDefinitionSource="SCRIPT">
+            <builds>
+              <build path="$PROJECT_DIR$/dal" name="dal">
+                <projects>
+                  <project path="$PROJECT_DIR$/dal" />
+                </projects>
+              </build>
+              <build path="$PROJECT_DIR$/dalinterface" name="dalinterface">
+                <projects>
+                  <project path="$PROJECT_DIR$/dalinterface" />
+                </projects>
+              </build>
+              <build path="$PROJECT_DIR$/logic" name="logic">
+                <projects>
+                  <project path="$PROJECT_DIR$/logic" />
+                </projects>
+              </build>
+              <build path="$PROJECT_DIR$/logicinterface" name="logicinterface">
+                <projects>
+                  <project path="$PROJECT_DIR$/logicinterface" />
+                </projects>
+              </build>
+              <build path="$PROJECT_DIR$/model" name="model">
+                <projects>
+                  <project path="$PROJECT_DIR$/model" />
+                </projects>
+              </build>
+              <build path="$PROJECT_DIR$/repository" name="repository">
+                <projects>
+                  <project path="$PROJECT_DIR$/repository" />
+                </projects>
+              </build>
+              <build path="$PROJECT_DIR$/repositoryinterface" name="repositoryinterface">
+                <projects>
+                  <project path="$PROJECT_DIR$/repositoryinterface" />
+                </projects>
+              </build>
+            </builds>
+          </compositeBuild>
+        </compositeConfiguration>
         <option name="externalProjectPath" value="$PROJECT_DIR$/factory" />
         <option name="gradleHome" value="" />
         <option name="modules">
           <set>
+            <option value="$PROJECT_DIR$/dal" />
+            <option value="$PROJECT_DIR$/dalinterface" />
             <option value="$PROJECT_DIR$/factory" />
+            <option value="$PROJECT_DIR$/logic" />
+            <option value="$PROJECT_DIR$/logicinterface" />
+            <option value="$PROJECT_DIR$/model" />
+            <option value="$PROJECT_DIR$/repository" />
+            <option value="$PROJECT_DIR$/repositoryinterface" />
           </set>
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
+        <compositeConfiguration>
+          <compositeBuild compositeDefinitionSource="SCRIPT">
+            <builds>
+              <build path="$PROJECT_DIR$/logicinterface" name="logicinterface">
+                <projects>
+                  <project path="$PROJECT_DIR$/logicinterface" />
+                </projects>
+              </build>
+              <build path="$PROJECT_DIR$/model" name="model">
+                <projects>
+                  <project path="$PROJECT_DIR$/model" />
+                </projects>
+              </build>
+              <build path="$PROJECT_DIR$/repositoryinterface" name="repositoryinterface">
+                <projects>
+                  <project path="$PROJECT_DIR$/repositoryinterface" />
+                </projects>
+              </build>
+            </builds>
+          </compositeBuild>
+        </compositeConfiguration>
         <option name="externalProjectPath" value="$PROJECT_DIR$/logic" />
         <option name="gradleHome" value="" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/logic" />
+            <option value="$PROJECT_DIR$/logicinterface" />
+            <option value="$PROJECT_DIR$/model" />
+            <option value="$PROJECT_DIR$/repositoryinterface" />
           </set>
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
+        <compositeConfiguration>
+          <compositeBuild compositeDefinitionSource="SCRIPT">
+            <builds>
+              <build path="$PROJECT_DIR$/model" name="model">
+                <projects>
+                  <project path="$PROJECT_DIR$/model" />
+                </projects>
+              </build>
+            </builds>
+          </compositeBuild>
+        </compositeConfiguration>
         <option name="externalProjectPath" value="$PROJECT_DIR$/logicinterface" />
         <option name="gradleHome" value="" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/logicinterface" />
+            <option value="$PROJECT_DIR$/model" />
           </set>
         </option>
       </GradleProjectSettings>
@@ -65,11 +233,35 @@
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
+        <compositeConfiguration>
+          <compositeBuild compositeDefinitionSource="SCRIPT">
+            <builds>
+              <build path="$PROJECT_DIR$/logicinterface" name="logicinterface">
+                <projects>
+                  <project path="$PROJECT_DIR$/logicinterface" />
+                </projects>
+              </build>
+              <build path="$PROJECT_DIR$/model" name="model">
+                <projects>
+                  <project path="$PROJECT_DIR$/model" />
+                </projects>
+              </build>
+              <build path="$PROJECT_DIR$/repositoryinterface" name="repositoryinterface">
+                <projects>
+                  <project path="$PROJECT_DIR$/repositoryinterface" />
+                </projects>
+              </build>
+            </builds>
+          </compositeBuild>
+        </compositeConfiguration>
         <option name="externalProjectPath" value="$PROJECT_DIR$/repository" />
         <option name="gradleHome" value="" />
         <option name="modules">
           <set>
+            <option value="$PROJECT_DIR$/logicinterface" />
+            <option value="$PROJECT_DIR$/model" />
             <option value="$PROJECT_DIR$/repository" />
+            <option value="$PROJECT_DIR$/repositoryinterface" />
           </set>
         </option>
       </GradleProjectSettings>

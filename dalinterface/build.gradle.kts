@@ -11,6 +11,7 @@ repositories {
 
 dependencies {
     testImplementation(kotlin("test"))
+    implementation("nl.benfcasting.api:model")
 }
 
 tasks.test {

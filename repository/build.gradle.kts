@@ -11,6 +11,10 @@ repositories {
 
 dependencies {
     testImplementation(kotlin("test"))
+    implementation("nl.benfcasting.api:model")
+    implementation("nl.benfcasting.api:logicinterface")
+    implementation("nl.benfcasting.api:repositoryinterface")
+
 }
 
 tasks.test {
