@@ -14,6 +14,7 @@ repositories {
 }
 
 dependencies {
+    implementation("com.google.inject:guice:7.0.0")
     implementation("org.springframework.boot:spring-boot-starter-web")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation(kotlin("test"))

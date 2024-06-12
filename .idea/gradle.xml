@@ -236,9 +236,9 @@
         <compositeConfiguration>
           <compositeBuild compositeDefinitionSource="SCRIPT">
             <builds>
-              <build path="$PROJECT_DIR$/logicinterface" name="logicinterface">
+              <build path="$PROJECT_DIR$/dalinterface" name="dalinterface">
                 <projects>
-                  <project path="$PROJECT_DIR$/logicinterface" />
+                  <project path="$PROJECT_DIR$/dalinterface" />
                 </projects>
               </build>
               <build path="$PROJECT_DIR$/model" name="model">
@@ -258,7 +258,7 @@
         <option name="gradleHome" value="" />
         <option name="modules">
           <set>
-            <option value="$PROJECT_DIR$/logicinterface" />
+            <option value="$PROJECT_DIR$/dalinterface" />
             <option value="$PROJECT_DIR$/model" />
             <option value="$PROJECT_DIR$/repository" />
             <option value="$PROJECT_DIR$/repositoryinterface" />

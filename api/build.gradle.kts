@@ -22,6 +22,7 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
+    implementation("com.google.inject:guice:7.0.0")
     implementation("nl.benfcasting.api:logicinterface")
     implementation("nl.benfcasting.api:model")
     implementation("nl.benfcasting.api:factory")

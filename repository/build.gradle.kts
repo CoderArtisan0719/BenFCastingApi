@@ -10,9 +10,10 @@ repositories {
 }
 
 dependencies {
+    implementation("com.google.inject:guice:7.0.0")
     testImplementation(kotlin("test"))
     implementation("nl.benfcasting.api:model")
-    implementation("nl.benfcasting.api:dalInterface")
+    implementation("nl.benfcasting.api:dalinterface")
     implementation("nl.benfcasting.api:repositoryinterface")
 
 }
