@@ -1,6 +1,5 @@
 plugins {
-    id("java")
-    id("org.jetbrains.kotlin.jvm") version "2.0.0"
+    kotlin("jvm") version "1.9.23"
 }
 
 group = "nl.benfcasting.api"
@@ -11,16 +10,12 @@ repositories {
 }
 
 dependencies {
-    testImplementation(platform("org.junit:junit-bom:5.10.0"))
-    testImplementation("org.junit.jupiter:junit-jupiter")
-    implementation(kotlin("stdlib-jdk8"))
+    testImplementation(kotlin("test"))
 }
 
 tasks.test {
     useJUnitPlatform()
 }
-java {
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(21)
-    }
+kotlin {
+    jvmToolchain(21)
 }
