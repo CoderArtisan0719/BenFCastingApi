@@ -1,4 +1,7 @@
 package nl.benfcasting.api.logic
 
-class UserLogicImpl {
+import nl.benfcasting.api.logicinterface.UserLogic
+import nl.benfcasting.api.repositoryinterface.UserRepository
+
+class UserLogicImpl(userRepository: UserRepository): UserLogic {
 }

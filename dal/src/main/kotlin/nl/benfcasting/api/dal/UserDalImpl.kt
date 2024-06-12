@@ -1,4 +1,6 @@
 package nl.benfcasting.api.dal
 
-class UserDalImpl {
+import nl.benfcasting.api.dalinterface.UserDal
+
+class UserDalImpl: UserDal {
 }
