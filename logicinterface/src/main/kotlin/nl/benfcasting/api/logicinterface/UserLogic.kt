@@ -1,7 +1,9 @@
+// logicinterface/src/main/kotlin/nl.benfcasting.api.api/UserLogic
 package nl.benfcasting.api.logicinterface
 
 import nl.benfcasting.api.model.User
 
 interface UserLogic {
-    fun getUser(): User
+    fun login(email: String, password: String): User
+    fun generateToken(user: User): String
 }

@@ -3,7 +3,6 @@ plugins {
     id("io.spring.dependency-management") version "1.1.5"
     kotlin("jvm") version "1.9.23"
     kotlin("plugin.spring") version "1.9.24"
-
 }
 
 group = "nl.benfcasting.api"
@@ -15,6 +14,7 @@ repositories {
 
 dependencies {
     implementation("com.google.inject:guice:7.0.0")
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-starter-web")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation(kotlin("test"))

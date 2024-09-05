@@ -20,13 +20,21 @@ repositories {
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("org.springframework.boot:spring-boot-starter-validation")
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    implementation("org.postgresql:postgresql:42.6.0")
+    implementation("org.flywaydb:flyway-core:10.16.0")
+    implementation("org.flywaydb:flyway-database-postgresql")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("com.google.inject:guice:7.0.0")
     implementation("nl.benfcasting.api:logicinterface")
     implementation("nl.benfcasting.api:model")
     implementation("nl.benfcasting.api:factory")
-    testImplementation("org.springframework.boot:spring-boot-starter-test")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+//    testImplementation("org.springframework.boot:spring-boot-star)  vz+" +
+//            "+" +
+//            "er-test")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }

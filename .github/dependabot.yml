@@ -1,0 +1,52 @@
+# To get started with Dependabot version updates, you'll need to specify which
+# package ecosystems to update and where the package manifests are located.
+# Please see the documentation for all configuration options:
+# https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+
+version: 2
+updates:
+  - package-ecosystem: "gradle" # See documentation for possible values
+    directory: "./dal" # Location of package manifests
+    schedule:
+      interval: "weekly"
+    target-branch: "develop"
+  - package-ecosystem: "gradle" # See documentation for possible values
+    directory: "./dalinterface" # Location of package manifests
+    schedule:
+      interval: "weekly"
+    target-branch: "develop"
+  - package-ecosystem: "gradle" # See documentation for possible values
+    directory: "./api" # Location of package manifests
+    schedule:
+      interval: "weekly"
+    target-branch: "develop"
+  - package-ecosystem: "gradle" # See documentation for possible values
+    directory: "./factory" # Location of package manifests
+    schedule:
+      interval: "weekly"
+    target-branch: "develop"
+  - package-ecosystem: "gradle" # See documentation for possible values
+    directory: "./logic" # Location of package manifests
+    schedule:
+      interval: "weekly"
+    target-branch: "develop"
+  - package-ecosystem: "gradle" # See documentation for possible values
+    directory: "./logicinterface" # Location of package manifests
+    schedule:
+      interval: "weekly"
+    target-branch: "develop"
+  - package-ecosystem: "gradle" # See documentation for possible values
+    directory: "./model" # Location of package manifests
+    schedule:
+      interval: "weekly"
+    target-branch: "develop"
+  - package-ecosystem: "gradle" # See documentation for possible values
+    directory: "./repository" # Location of package manifests
+    schedule:
+      interval: "weekly"
+    target-branch: "develop"
+  - package-ecosystem: "gradle" # See documentation for possible values
+    directory: "./repositoryinterface" # Location of package manifests
+    schedule:
+      interval: "weekly"
+    target-branch: "develop"
