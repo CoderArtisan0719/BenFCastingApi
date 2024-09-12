@@ -9,13 +9,13 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
 data class User(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id: Int = 0,
+    val id: Int,
 
     @Column(unique = true, nullable = false)
-    val email: String = "",
+    val email: String,
 
     @Column(nullable = false)
-    var password: String = "",
+    var password: String,
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)

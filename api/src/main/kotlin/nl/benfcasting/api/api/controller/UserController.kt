@@ -7,7 +7,6 @@ import nl.benfcasting.api.api.dto.tx.LoginRequestDto
 import nl.benfcasting.api.api.dto.tx.LoginResponseDto
 import nl.benfcasting.api.factory.Factory
 import nl.benfcasting.api.logicinterface.UserLogic
-import org.slf4j.LoggerFactory
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.ExceptionHandler
@@ -20,15 +19,12 @@ import org.springframework.web.bind.annotation.RestController
 @RestController
 @RequestMapping("/api/auth")
 class UserController(factory: Factory) {
-    private var logger = LoggerFactory.getLogger(UserController::class.java)
+
     private var userLogic: UserLogic = factory.resolve<UserLogic>()
 
     @PostMapping("/login")
     fun login(@Valid @RequestBody request: LoginRequestDto): ResponseEntity<LoginResponseDto> {
-        logger.info("Received login request for ${request.email}")
-        logger.info("Received ${request.password}")
         val user = userLogic.login(request.email, request.password)
-        logger.info(user.toString())
         val token = userLogic.generateToken(user)
         return ResponseEntity.ok(LoginResponseDto(token = token,"Login successful", status = true))
     }

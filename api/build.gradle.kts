@@ -27,14 +27,15 @@ dependencies {
     implementation("org.flywaydb:flyway-database-postgresql")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
+    implementation("org.springframework.guice:spring-guice:1.1.0.RELEASE")
     implementation("com.google.inject:guice:7.0.0")
     implementation("nl.benfcasting.api:logicinterface")
     implementation("nl.benfcasting.api:model")
     implementation("nl.benfcasting.api:factory")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-//    testImplementation("org.springframework.boot:spring-boot-star)  vz+" +
-//            "+" +
-//            "er-test")
+    testImplementation("org.springframework.boot:spring-boot-star)  vz+" +
+            "+" +
+            "er-test")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
