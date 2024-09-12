@@ -3,7 +3,6 @@ plugins {
     id("io.spring.dependency-management") version "1.1.5"
     kotlin("jvm") version "1.9.23"
     kotlin("plugin.spring") version "1.9.24"
-    kotlin("plugin.jpa") version "1.9.24"
 }
 
 group = "nl.benfcasting.api"
@@ -14,11 +13,23 @@ repositories {
 }
 
 dependencies {
-    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-    implementation("org.jetbrains.kotlin:kotlin-reflect")
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+    // Spring Boot Starter
+    implementation("org.springframework.boot:spring-boot-starter")
+
+    // Spring Security dependency for password encoding
     implementation("org.springframework.boot:spring-boot-starter-security")
+
+    // Spring context for @Service and other Spring features
+    implementation("org.springframework:spring-context")
+
+    // Kotlin Reflection for Spring Boot
+    implementation("org.jetbrains.kotlin:kotlin-reflect")
+
     implementation("com.google.inject:guice:7.0.0")
+
+    implementation("nl.benfcasting.api:model")
+    implementation("nl.benfcasting.api:dalinterface")
+
     testImplementation(kotlin("test"))
 }
 

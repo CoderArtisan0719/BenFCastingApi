@@ -32,6 +32,7 @@ dependencies {
     implementation("nl.benfcasting.api:logicinterface")
     implementation("nl.benfcasting.api:model")
     implementation("nl.benfcasting.api:factory")
+    implementation("nl.benfcasting.api:service")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     testImplementation("org.springframework.boot:spring-boot-star)  vz+" +
             "+" +

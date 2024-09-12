@@ -24,6 +24,7 @@ dependencies {
     implementation("nl.benfcasting.api:logicinterface")
     implementation("nl.benfcasting.api:repositoryinterface")
     implementation("nl.benfcasting.api:model")
+    implementation("nl.benfcasting.api:service")
 }
 
 tasks.test {

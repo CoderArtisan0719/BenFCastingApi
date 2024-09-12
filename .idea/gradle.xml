@@ -47,6 +47,11 @@
                   <project path="$PROJECT_DIR$/repositoryinterface" />
                 </projects>
               </build>
+              <build path="$PROJECT_DIR$/service" name="service">
+                <projects>
+                  <project path="$PROJECT_DIR$/service" />
+                </projects>
+              </build>
             </builds>
           </compositeBuild>
         </compositeConfiguration>
@@ -62,6 +67,7 @@
             <option value="$PROJECT_DIR$/model" />
             <option value="$PROJECT_DIR$/repository" />
             <option value="$PROJECT_DIR$/repositoryinterface" />
+            <option value="$PROJECT_DIR$/service" />
           </set>
         </option>
       </GradleProjectSettings>
@@ -82,6 +88,11 @@
                   <project path="$PROJECT_DIR$/model" />
                 </projects>
               </build>
+              <build path="$PROJECT_DIR$/repositoryinterface" name="repositoryinterface">
+                <projects>
+                  <project path="$PROJECT_DIR$/repositoryinterface" />
+                </projects>
+              </build>
             </builds>
           </compositeBuild>
         </compositeConfiguration>
@@ -91,6 +102,7 @@
             <option value="$PROJECT_DIR$/dal" />
             <option value="$PROJECT_DIR$/dalinterface" />
             <option value="$PROJECT_DIR$/model" />
+            <option value="$PROJECT_DIR$/repositoryinterface" />
           </set>
         </option>
       </GradleProjectSettings>
@@ -223,10 +235,28 @@
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
+        <compositeConfiguration>
+          <compositeBuild compositeDefinitionSource="SCRIPT">
+            <builds>
+              <build path="$PROJECT_DIR$/dalinterface" name="dalinterface">
+                <projects>
+                  <project path="$PROJECT_DIR$/dalinterface" />
+                </projects>
+              </build>
+              <build path="$PROJECT_DIR$/service" name="service">
+                <projects>
+                  <project path="$PROJECT_DIR$/service" />
+                </projects>
+              </build>
+            </builds>
+          </compositeBuild>
+        </compositeConfiguration>
         <option name="externalProjectPath" value="$PROJECT_DIR$/model" />
         <option name="modules">
           <set>
+            <option value="$PROJECT_DIR$/dalinterface" />
             <option value="$PROJECT_DIR$/model" />
+            <option value="$PROJECT_DIR$/service" />
           </set>
         </option>
       </GradleProjectSettings>
@@ -279,6 +309,15 @@
           <set>
             <option value="$PROJECT_DIR$/model" />
             <option value="$PROJECT_DIR$/repositoryinterface" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/service" />
+        <option name="gradleHome" value="" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/service" />
           </set>
         </option>
       </GradleProjectSettings>

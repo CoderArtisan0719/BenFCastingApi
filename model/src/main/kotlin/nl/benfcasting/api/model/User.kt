@@ -2,11 +2,11 @@
 package nl.benfcasting.api.model
 
 import jakarta.persistence.*
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
+import com.google.inject.Inject
 
 @Entity
 @Table(name = "users")
-data class User(
+data class User @Inject constructor(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Int,
@@ -28,13 +28,7 @@ data class User(
     val lastName: String? = null,
 
     val preposition: String? = null
-) {
-    constructor(): this(0, "", "", UserType.SUBSCRIBER, "", null, null)
-
-    fun encryptPassword() {
-        this.password = BCryptPasswordEncoder().encode(this.password)
-    }
-}
+)
 
 enum class UserType {
     ADMIN, SUBSCRIBER
