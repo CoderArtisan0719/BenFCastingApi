@@ -11,7 +11,6 @@ import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfi
 import org.springframework.validation.beanvalidation.MethodValidationPostProcessor
 
 @SpringBootApplication(exclude = [SecurityAutoConfiguration::class])
-//@ComponentScan("nl.benfcasting.api", "nl.benfcasting.api.factory")
 @ComponentScan(basePackages = ["nl.benfcasting.api", "nl.benfcasting.api.factory", "nl.benfcasting.api.service"])
 @EntityScan(basePackages = ["nl.benfcasting.api.model"])
 class ApiApplication {
