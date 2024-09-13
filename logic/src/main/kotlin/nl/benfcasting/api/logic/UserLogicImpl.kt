@@ -32,7 +32,7 @@ class UserLogicImpl @Inject constructor(
             throw IllegalArgumentException("Voer het juiste wachtwoord in")
         }
 
-        if (user.type != UserType.ADMIN) {
+        if (user.type != UserType.admin) {
             throw IllegalArgumentException("Alleen beheerders mogen inloggen")
         }
 
