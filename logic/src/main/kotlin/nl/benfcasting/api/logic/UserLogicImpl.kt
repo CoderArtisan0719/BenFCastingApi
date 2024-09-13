@@ -26,14 +26,14 @@ class UserLogicImpl @Inject constructor(
     override fun login(email: String, password: String): User {
 
         val user = userRepository.findByEmail(email)
-            ?: throw IllegalArgumentException("E-mail password combination not found")
+            ?: throw IllegalArgumentException("Voer het juiste e-mailadres in")
 
         if (!userService.authenticateUser(password, user.password)) {
-            throw IllegalArgumentException("E-mail password combination not found")
+            throw IllegalArgumentException("Voer het juiste wachtwoord in")
         }
 
         if (user.type != UserType.ADMIN) {
-            throw IllegalArgumentException("Only admin users are allowed to log in")
+            throw IllegalArgumentException("Alleen beheerders mogen inloggen")
         }
 
         return user
