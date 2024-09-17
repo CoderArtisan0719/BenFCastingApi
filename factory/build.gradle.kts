@@ -1,7 +1,7 @@
 plugins {
     id("org.springframework.boot") version "3.3.0"
     id("io.spring.dependency-management") version "1.1.5"
-    kotlin("jvm") version "1.9.23"
+    kotlin("jvm") version "1.9.24"
     kotlin("plugin.spring") version "1.9.24"
 }
 
@@ -24,6 +24,8 @@ dependencies {
     implementation("nl.benfcasting.api:repository")
     implementation("nl.benfcasting.api:dalinterface")
     implementation("nl.benfcasting.api:dal")
+    implementation("nl.benfcasting.api:service")
+    implementation("nl.benfcasting.api:serviceinterface")
     implementation("nl.benfcasting.api:model")
 }
 

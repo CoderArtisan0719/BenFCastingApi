@@ -7,7 +7,7 @@ import nl.benfcasting.api.api.ApiApplication
 import nl.benfcasting.api.model.User
 import nl.benfcasting.api.model.UserType
 import nl.benfcasting.api.repositoryinterface.UserRepository
-import nl.benfcasting.api.service.UserService
+import nl.benfcasting.api.service.UserServiceImpl
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
@@ -19,14 +19,14 @@ import java.util.*
 class UserLogicImplTest {
 
     private lateinit var userRepository: UserRepository
-    private lateinit var userService: UserService
+    private lateinit var userServiceImpl: UserServiceImpl
     private lateinit var userLogicImpl: UserLogicImpl
 
     @BeforeEach
     fun setUp() {
         userRepository = mock(UserRepository::class.java)
-        userService = mock(UserService::class.java)
-        userLogicImpl = UserLogicImpl(userRepository, userService)
+        userServiceImpl = mock(UserServiceImpl::class.java)
+        userLogicImpl = UserLogicImpl(userRepository, userServiceImpl)
     }
 
     @Test
@@ -60,7 +60,7 @@ class UserLogicImplTest {
         )
 
         `when`(userRepository.findByEmail(email)).thenReturn(user)
-        `when`(userService.authenticateUser(password, user.password)).thenReturn(false)
+        `when`(userServiceImpl.authenticateUser(password, user.password)).thenReturn(false)
 
         val exception = assertThrows(IllegalArgumentException::class.java) {
             userLogicImpl.login(email, password)
@@ -86,7 +86,7 @@ class UserLogicImplTest {
         )
 
         `when`(userRepository.findByEmail(email)).thenReturn(user)
-        `when`(userService.authenticateUser(password, user.password)).thenReturn(true)
+        `when`(userServiceImpl.authenticateUser(password, user.password)).thenReturn(true)
 
         val exception = assertThrows(IllegalArgumentException::class.java) {
             userLogicImpl.login(email, password)
@@ -112,14 +112,14 @@ class UserLogicImplTest {
         )
 
         `when`(userRepository.findByEmail(email)).thenReturn(user)
-        `when`(userService.authenticateUser(password, user.password)).thenReturn(true)
+        `when`(userServiceImpl.authenticateUser(password, user.password)).thenReturn(true)
 
         val result = userLogicImpl.login(email, password)
 
         assertNotNull(result)
         assertEquals(email, result.email)
         verify(userRepository).findByEmail(email)
-        verify(userService).authenticateUser(password, user.password)
+        verify(userServiceImpl).authenticateUser(password, user.password)
     }
 
     @Test

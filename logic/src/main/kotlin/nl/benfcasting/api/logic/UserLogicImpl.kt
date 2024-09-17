@@ -10,7 +10,7 @@ import nl.benfcasting.api.logicinterface.UserLogic
 import nl.benfcasting.api.model.User
 import nl.benfcasting.api.model.UserType
 import nl.benfcasting.api.repositoryinterface.UserRepository
-import nl.benfcasting.api.service.UserService
+import nl.benfcasting.api.serviceinterface.UserService
 import org.springframework.stereotype.Service
 import javax.crypto.SecretKey
 import java.util.*

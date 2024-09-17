@@ -3,7 +3,6 @@ plugins {
     id("io.spring.dependency-management") version "1.1.5"
     kotlin("jvm") version "1.9.24"
     kotlin("plugin.spring") version "1.9.24"
-    kotlin("plugin.jpa") version "1.9.24"
 }
 
 group = "nl.benfcasting.api"
@@ -14,12 +13,12 @@ repositories {
 }
 
 dependencies {
-    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    implementation("org.springframework.boot:spring-boot-starter")
+    implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-    implementation("org.springframework.boot:spring-boot-starter-security")
-    implementation("com.google.inject:guice:7.0.0")
-    testImplementation(kotlin("test"))
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
+//    testImplementation(kotlin("test"))
 }
 
 tasks.test {

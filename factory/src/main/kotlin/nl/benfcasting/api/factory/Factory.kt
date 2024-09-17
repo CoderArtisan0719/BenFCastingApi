@@ -11,6 +11,10 @@ import nl.benfcasting.api.logic.UserLogicImpl
 import nl.benfcasting.api.logicinterface.UserLogic
 import nl.benfcasting.api.repository.UserRepositoryImpl
 import nl.benfcasting.api.repositoryinterface.UserRepository
+import nl.benfcasting.api.service.PasswordServiceImpl
+import nl.benfcasting.api.serviceinterface.PasswordService
+import nl.benfcasting.api.service.UserServiceImpl
+import nl.benfcasting.api.serviceinterface.UserService
 import org.springframework.stereotype.Component
 
 @Component
@@ -28,5 +32,7 @@ class Factory(entityManager: EntityManager) : AbstractModule() {
         bind(UserDal::class.java).to(UserDalImpl::class.java)
         bind(UserLogic::class.java).to(UserLogicImpl::class.java)
         bind(UserRepository::class.java).to(UserRepositoryImpl::class.java)
+        bind(PasswordService::class.java).to(PasswordServiceImpl::class.java)
+        bind(UserService::class.java).to(UserServiceImpl::class.java)
     }
 }

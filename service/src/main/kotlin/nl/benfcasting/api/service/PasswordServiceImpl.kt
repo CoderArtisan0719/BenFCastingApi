@@ -1,15 +1,16 @@
 package nl.benfcasting.api.service
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
+import nl.benfcasting.api.serviceinterface.PasswordService
 import org.springframework.stereotype.Service
 
 @Service
-class PasswordService {
+class PasswordServiceImpl : PasswordService {
     private val passwordEncoder = BCryptPasswordEncoder()
-    fun hashPassword(password: String): String {
+    override fun hashPassword(password: String): String {
         return passwordEncoder.encode(password)
     }
-    fun verifyPassword(plainPassword: String, hashedPassword: String): Boolean {
+    override fun verifyPassword(plainPassword: String, hashedPassword: String): Boolean {
         return passwordEncoder.matches(plainPassword, hashedPassword)
     }
 }
