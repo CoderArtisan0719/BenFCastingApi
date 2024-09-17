@@ -20,11 +20,18 @@ dependencies {
     runtimeOnly("io.jsonwebtoken:jjwt-impl:0.11.5")
     runtimeOnly("io.jsonwebtoken:jjwt-jackson:0.11.5")
     implementation("com.google.inject:guice:7.0.0")
-    testImplementation(kotlin("test"))
     implementation("nl.benfcasting.api:logicinterface")
     implementation("nl.benfcasting.api:repositoryinterface")
     implementation("nl.benfcasting.api:model")
     implementation("nl.benfcasting.api:service")
+    testImplementation(kotlin("test"))
+    testImplementation("nl.benfcasting.api:api")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.0")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.9.0")
+    testImplementation("org.mockito:mockito-core:5.0.0")
+    testImplementation("org.mockito.kotlin:mockito-kotlin:4.0.0")
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
+    testImplementation("io.mockk:mockk:1.13.4")
 }
 
 tasks.test {
