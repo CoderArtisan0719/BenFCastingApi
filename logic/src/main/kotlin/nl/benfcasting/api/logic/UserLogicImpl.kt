@@ -4,12 +4,12 @@ package nl.benfcasting.api.logic
 import io.jsonwebtoken.Jwts
 import io.jsonwebtoken.security.Keys
 import io.jsonwebtoken.SignatureAlgorithm
-import io.jsonwebtoken.io.Decoders
 import nl.benfcasting.api.logicinterface.UserLogic
 import nl.benfcasting.api.model.User
 import nl.benfcasting.api.model.UserType
 import nl.benfcasting.api.repositoryinterface.UserRepository
 import nl.benfcasting.api.serviceinterface.UserService
+import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Service
 import javax.crypto.SecretKey
 import java.util.*
@@ -18,9 +18,11 @@ import java.util.*
 class UserLogicImpl (
     private val userRepository: UserRepository,
     private val userService: UserService,
+    @Value("\${JWT_SECRET}")
+    private val jwtSecret: String
 ) : UserLogic {
 
-    private val secretKey: SecretKey = Keys.hmacShaKeyFor(Decoders.BASE64.decode("9VXsL1HSqnpB5oc7LJrx5K5XI+Ficqu1uvpG4uJhtQo="))
+    private val secretKey: SecretKey = Keys.hmacShaKeyFor(Base64.getDecoder().decode(jwtSecret))
 
     override fun login(email: String, password: String): User {
 
