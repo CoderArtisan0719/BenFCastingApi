@@ -13,14 +13,14 @@ repositories {
 }
 
 dependencies {
-    implementation("org.springframework.boot:spring-boot-starter")
     implementation("org.springframework.boot:spring-boot-starter-security")
-    implementation("org.springframework:spring-context")
-    implementation("org.jetbrains.kotlin:kotlin-reflect")
+    implementation("io.jsonwebtoken:jjwt-api:0.11.5")
     implementation("com.google.inject:guice:7.0.0")
-    implementation("nl.benfcasting.api:dalinterface")
     implementation("nl.benfcasting.api:serviceinterface")
-    testImplementation(kotlin("test"))
+    implementation("nl.benfcasting.api:repositoryinterface")
+    implementation("nl.benfcasting.api:model")
+    runtimeOnly("io.jsonwebtoken:jjwt-impl:0.11.5")
+    runtimeOnly("io.jsonwebtoken:jjwt-jackson:0.11.5")
 }
 
 tasks.test {

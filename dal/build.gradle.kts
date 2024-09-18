@@ -14,10 +14,8 @@ repositories {
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-    testImplementation(kotlin("test"))
     implementation("com.google.inject:guice:7.0.0")
     implementation("nl.benfcasting.api:dalinterface")
-    implementation("nl.benfcasting.api:repositoryinterface")
     implementation("nl.benfcasting.api:model")
 }
 

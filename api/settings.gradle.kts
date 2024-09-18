@@ -1,4 +1,5 @@
 rootProject.name = "api"
 includeBuild("../logicinterface")
 includeBuild("../model")
-includeBuild("../service")
+includeBuild("../factory")
+includeBuild("../logic")

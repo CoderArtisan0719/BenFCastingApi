@@ -1,17 +1,19 @@
-// dal/src/main/kotlin/nl.benfcasting.api.api/UserDalImpl
-
 package nl.benfcasting.api.dal
 
+import com.google.inject.Inject
+import com.google.inject.Singleton
+import jakarta.persistence.EntityManager
 import nl.benfcasting.api.dalinterface.UserDal
 import nl.benfcasting.api.model.User
-import nl.benfcasting.api.repositoryinterface.UserRepository
-import org.springframework.stereotype.Component
 
-@Component
-class UserDalImpl (
-    private val userRepository: UserRepository
+@Singleton
+class UserDalImpl @Inject constructor (
+    private val entityManager: EntityManager,
 ) : UserDal {
     override fun findByEmail(email: String): User? {
-        return this.userRepository.findByEmail(email)
+        return entityManager.createQuery("SELECT u FROM User u WHERE u.email = :email", User::class.java)
+            .setParameter("email", email)
+            .resultList
+            .firstOrNull()
     }
 }

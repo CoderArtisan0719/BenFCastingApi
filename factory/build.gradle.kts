@@ -14,9 +14,16 @@ repositories {
 
 dependencies {
     implementation("com.google.inject:guice:7.0.0")
-    implementation("nl.benfcasting.api:model")
-    implementation("nl.benfcasting.api:dalinterface")
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    implementation("nl.benfcasting.api:logicinterface")
+    implementation("nl.benfcasting.api:logic")
     implementation("nl.benfcasting.api:repositoryinterface")
+    implementation("nl.benfcasting.api:repository")
+    implementation("nl.benfcasting.api:dalinterface")
+    implementation("nl.benfcasting.api:dal")
+    implementation("nl.benfcasting.api:serviceinterface")
+    implementation("nl.benfcasting.api:service")
+    implementation("nl.benfcasting.api:model")
 }
 
 tasks.test {

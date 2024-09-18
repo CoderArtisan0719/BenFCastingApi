@@ -1,10 +1,10 @@
 package nl.benfcasting.api.service
 
+import com.google.inject.Singleton
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
 import nl.benfcasting.api.serviceinterface.PasswordService
-import org.springframework.stereotype.Service
 
-@Service
+@Singleton
 class PasswordServiceImpl : PasswordService {
     private val passwordEncoder = BCryptPasswordEncoder()
     override fun hashPassword(password: String): String {

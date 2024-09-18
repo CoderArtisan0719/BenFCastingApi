@@ -1,4 +1,3 @@
-// model/src/main/kotlin/nl.benfcasting.api.api/User
 package nl.benfcasting.api.model
 
 import jakarta.persistence.*

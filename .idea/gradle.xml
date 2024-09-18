@@ -79,6 +79,11 @@
       </GradleProjectSettings>
       <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/config" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/config" />
+          </set>
+        </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
         <compositeConfiguration>
@@ -94,11 +99,6 @@
                   <project path="$PROJECT_DIR$/model" />
                 </projects>
               </build>
-              <build path="$PROJECT_DIR$/repositoryinterface" name="repositoryinterface">
-                <projects>
-                  <project path="$PROJECT_DIR$/repositoryinterface" />
-                </projects>
-              </build>
             </builds>
           </compositeBuild>
         </compositeConfiguration>
@@ -108,7 +108,6 @@
             <option value="$PROJECT_DIR$/dal" />
             <option value="$PROJECT_DIR$/dalinterface" />
             <option value="$PROJECT_DIR$/model" />
-            <option value="$PROJECT_DIR$/repositoryinterface" />
           </set>
         </option>
       </GradleProjectSettings>
@@ -136,11 +135,6 @@
         <compositeConfiguration>
           <compositeBuild compositeDefinitionSource="SCRIPT">
             <builds>
-              <build path="$PROJECT_DIR$/api" name="api">
-                <projects>
-                  <project path="$PROJECT_DIR$/api" />
-                </projects>
-              </build>
               <build path="$PROJECT_DIR$/dal" name="dal">
                 <projects>
                   <project path="$PROJECT_DIR$/dal" />
@@ -192,7 +186,6 @@
         <option name="externalProjectPath" value="$PROJECT_DIR$/factory" />
         <option name="modules">
           <set>
-            <option value="$PROJECT_DIR$/api" />
             <option value="$PROJECT_DIR$/dal" />
             <option value="$PROJECT_DIR$/dalinterface" />
             <option value="$PROJECT_DIR$/factory" />
@@ -210,16 +203,6 @@
         <compositeConfiguration>
           <compositeBuild compositeDefinitionSource="SCRIPT">
             <builds>
-              <build path="$PROJECT_DIR$/api" name="api">
-                <projects>
-                  <project path="$PROJECT_DIR$/api" />
-                </projects>
-              </build>
-              <build path="$PROJECT_DIR$/dalinterface" name="dalinterface">
-                <projects>
-                  <project path="$PROJECT_DIR$/dalinterface" />
-                </projects>
-              </build>
               <build path="$PROJECT_DIR$/logicinterface" name="logicinterface">
                 <projects>
                   <project path="$PROJECT_DIR$/logicinterface" />
@@ -228,16 +211,6 @@
               <build path="$PROJECT_DIR$/model" name="model">
                 <projects>
                   <project path="$PROJECT_DIR$/model" />
-                </projects>
-              </build>
-              <build path="$PROJECT_DIR$/repositoryinterface" name="repositoryinterface">
-                <projects>
-                  <project path="$PROJECT_DIR$/repositoryinterface" />
-                </projects>
-              </build>
-              <build path="$PROJECT_DIR$/service" name="service">
-                <projects>
-                  <project path="$PROJECT_DIR$/service" />
                 </projects>
               </build>
               <build path="$PROJECT_DIR$/serviceinterface" name="serviceinterface">
@@ -251,13 +224,9 @@
         <option name="externalProjectPath" value="$PROJECT_DIR$/logic" />
         <option name="modules">
           <set>
-            <option value="$PROJECT_DIR$/api" />
-            <option value="$PROJECT_DIR$/dalinterface" />
             <option value="$PROJECT_DIR$/logic" />
             <option value="$PROJECT_DIR$/logicinterface" />
             <option value="$PROJECT_DIR$/model" />
-            <option value="$PROJECT_DIR$/repositoryinterface" />
-            <option value="$PROJECT_DIR$/service" />
             <option value="$PROJECT_DIR$/serviceinterface" />
           </set>
         </option>
@@ -346,14 +315,14 @@
         <compositeConfiguration>
           <compositeBuild compositeDefinitionSource="SCRIPT">
             <builds>
-              <build path="$PROJECT_DIR$/dalinterface" name="dalinterface">
-                <projects>
-                  <project path="$PROJECT_DIR$/dalinterface" />
-                </projects>
-              </build>
               <build path="$PROJECT_DIR$/model" name="model">
                 <projects>
                   <project path="$PROJECT_DIR$/model" />
+                </projects>
+              </build>
+              <build path="$PROJECT_DIR$/repositoryinterface" name="repositoryinterface">
+                <projects>
+                  <project path="$PROJECT_DIR$/repositoryinterface" />
                 </projects>
               </build>
               <build path="$PROJECT_DIR$/serviceinterface" name="serviceinterface">
@@ -368,18 +337,30 @@
         <option name="gradleHome" value="" />
         <option name="modules">
           <set>
-            <option value="$PROJECT_DIR$/dalinterface" />
             <option value="$PROJECT_DIR$/model" />
+            <option value="$PROJECT_DIR$/repositoryinterface" />
             <option value="$PROJECT_DIR$/service" />
             <option value="$PROJECT_DIR$/serviceinterface" />
           </set>
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
+        <compositeConfiguration>
+          <compositeBuild compositeDefinitionSource="SCRIPT">
+            <builds>
+              <build path="$PROJECT_DIR$/model" name="model">
+                <projects>
+                  <project path="$PROJECT_DIR$/model" />
+                </projects>
+              </build>
+            </builds>
+          </compositeBuild>
+        </compositeConfiguration>
         <option name="externalProjectPath" value="$PROJECT_DIR$/serviceinterface" />
         <option name="gradleHome" value="" />
         <option name="modules">
           <set>
+            <option value="$PROJECT_DIR$/model" />
             <option value="$PROJECT_DIR$/serviceinterface" />
           </set>
         </option>

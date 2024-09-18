@@ -1,3 +1,4 @@
 rootProject.name = "service"
-includeBuild("../dalinterface")
 includeBuild("../serviceinterface")
+includeBuild("../repositoryinterface")
+includeBuild("../model")

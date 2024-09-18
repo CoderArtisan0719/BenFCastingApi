@@ -13,9 +13,6 @@ repositories {
 }
 
 dependencies {
-    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-    implementation("com.google.inject:guice:7.0.0")
-    testImplementation(kotlin("test"))
     implementation("nl.benfcasting.api:model")
 }
 

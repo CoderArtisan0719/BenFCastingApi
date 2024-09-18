@@ -15,11 +15,6 @@ repositories {
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-    implementation("org.jetbrains.kotlin:kotlin-reflect")
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-    implementation("org.springframework.boot:spring-boot-starter-security")
-    implementation("com.google.inject:guice:7.0.0")
-    testImplementation(kotlin("test"))
 }
 
 tasks.test {
