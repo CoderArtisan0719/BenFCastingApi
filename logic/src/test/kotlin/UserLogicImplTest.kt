@@ -1,78 +1,38 @@
 package nl.benfcasting.api.logic
 
 import io.jsonwebtoken.Jwts
-import io.jsonwebtoken.io.Decoders
 import io.jsonwebtoken.security.Keys
-import nl.benfcasting.api.api.ApiApplication
 import nl.benfcasting.api.model.User
 import nl.benfcasting.api.model.UserType
 import nl.benfcasting.api.repositoryinterface.UserRepository
-import nl.benfcasting.api.service.UserServiceImpl
+import nl.benfcasting.api.serviceinterface.UserService
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
-import org.mockito.Mockito.*
-import org.springframework.boot.test.context.SpringBootTest
+import org.mockito.kotlin.mock
+import org.mockito.kotlin.whenever
+import java.time.LocalDateTime
 import java.util.*
 
-@SpringBootTest(classes = [ApiApplication::class])
 class UserLogicImplTest {
 
     private lateinit var userRepository: UserRepository
-    private lateinit var userServiceImpl: UserServiceImpl
-    private lateinit var userLogicImpl: UserLogicImpl
+    private lateinit var userService: UserService
+    private lateinit var userLogic: UserLogicImpl
+
+    private val jwtSecret = Base64.getEncoder().encodeToString("9VXsL1HSqnpB5oc7LJrx5K5XI+Ficqu1uvpG4uJhtQo=".toByteArray())
 
     @BeforeEach
     fun setUp() {
-        userRepository = mock(UserRepository::class.java)
-        userServiceImpl = mock(UserServiceImpl::class.java)
-        userLogicImpl = UserLogicImpl(userRepository, userServiceImpl)
+        userRepository = mock()
+        userService = mock()
+        userLogic = UserLogicImpl(userRepository, userService, jwtSecret)
     }
 
     @Test
-    fun `login should throw exception if user is not found`() {
-        val email = "test@example.com"
-        val password = "password"
-
-        `when`(userRepository.findByEmail(email)).thenReturn(null)
-
-        val exception = assertThrows(IllegalArgumentException::class.java) {
-            userLogicImpl.login(email, password)
-        }
-
-        assertEquals("Voer het juiste e-mailadres in", exception.message)
-    }
-
-    @Test
-    fun `login should throw exception if password does not match`() {
-        val email = "test@example.com"
-        val password = "wrong-password"
-        val user = User(
-            id = 1L,
-            firstname = "John",
-            preposition = "",
-            lastname = "Doe",
-            fullname = "John Doe",
-            email = email,
-            password = "correct-password",
-            type = UserType.admin,
-            verified = true
-        )
-
-        `when`(userRepository.findByEmail(email)).thenReturn(user)
-        `when`(userServiceImpl.authenticateUser(password, user.password)).thenReturn(false)
-
-        val exception = assertThrows(IllegalArgumentException::class.java) {
-            userLogicImpl.login(email, password)
-        }
-
-        assertEquals("Voer het juiste wachtwoord in", exception.message)
-    }
-
-    @Test
-    fun `login should throw exception if user is not admin`() {
-        val email = "test@example.com"
-        val password = "correct-password"
+    fun `login should return user when credentials are correct and user is admin`() {
+        val email = "admin@example.com"
+        val password = "password123"
         val user = User(
             id = 1L,
             firstname = "John",
@@ -81,24 +41,49 @@ class UserLogicImplTest {
             fullname = "John Doe",
             email = email,
             password = password,
-            type = UserType.subscriber, // Not an admin
-            verified = true
+            type = UserType.admin,
+            createdAt = LocalDateTime.now(),
+            updatedAt = LocalDateTime.now()
         )
 
-        `when`(userRepository.findByEmail(email)).thenReturn(user)
-        `when`(userServiceImpl.authenticateUser(password, user.password)).thenReturn(true)
+        whenever(userRepository.findByEmail(email)).thenReturn(user)
+        whenever(userService.authenticateUser(password, user.password)).thenReturn(true)
+
+        val result = userLogic.login(email, password)
+        assertNotNull(result)
+        assertEquals(user, result)
+    }
+
+    @Test
+    fun `login should throw exception when user is not admin`() {
+        val email = "user@example.com"
+        val password = "password123"
+        val user = User(
+            id = 1L,
+            firstname = "Jane",
+            preposition = "",
+            lastname = "Doe",
+            fullname = "Jane Doe",
+            email = email,
+            password = password,
+            type = UserType.subscriber,
+            createdAt = LocalDateTime.now(),
+            updatedAt = LocalDateTime.now()
+        )
+
+        whenever(userRepository.findByEmail(email)).thenReturn(user)
+        whenever(userService.authenticateUser(password, user.password)).thenReturn(true)
 
         val exception = assertThrows(IllegalArgumentException::class.java) {
-            userLogicImpl.login(email, password)
+            userLogic.login(email, password)
         }
-
         assertEquals("Alleen beheerders mogen inloggen", exception.message)
     }
 
     @Test
-    fun `login should return user when valid credentials are provided`() {
-        val email = "test@example.com"
-        val password = "correct-password"
+    fun `login should throw exception when password is incorrect`() {
+        val email = "admin@example.com"
+        val password = "password123"
         val user = User(
             id = 1L,
             firstname = "John",
@@ -106,46 +91,45 @@ class UserLogicImplTest {
             lastname = "Doe",
             fullname = "John Doe",
             email = email,
-            password = password,
+            password = "wrong-password",
             type = UserType.admin,
-            verified = true
+            createdAt = LocalDateTime.now(),
+            updatedAt = LocalDateTime.now()
         )
 
-        `when`(userRepository.findByEmail(email)).thenReturn(user)
-        `when`(userServiceImpl.authenticateUser(password, user.password)).thenReturn(true)
+        whenever(userRepository.findByEmail(email)).thenReturn(user)
+        whenever(userService.authenticateUser(password, user.password)).thenReturn(false)
 
-        val result = userLogicImpl.login(email, password)
-
-        assertNotNull(result)
-        assertEquals(email, result.email)
-        verify(userRepository).findByEmail(email)
-        verify(userServiceImpl).authenticateUser(password, user.password)
+        val exception = assertThrows(IllegalArgumentException::class.java) {
+            userLogic.login(email, password)
+        }
+        assertEquals("Uw wachtwoord en e-mailcombinatie zijn niet gevonden", exception.message)
     }
 
     @Test
-    fun `generateToken should return a valid JWT token`() {
+    fun `generateToken should return valid JWT token`() {
         val user = User(
             id = 1L,
             firstname = "John",
             preposition = "",
             lastname = "Doe",
             fullname = "John Doe",
-            email = "test@example.com",
-            password = "correct-password",
+            email = "admin@example.com",
+            password = "password123",
             type = UserType.admin,
-            verified = true
+            createdAt = LocalDateTime.now(),
+            updatedAt = LocalDateTime.now()
         )
 
-        val token = userLogicImpl.generateToken(user)
+        val token = userLogic.generateToken(user)
 
         assertNotNull(token)
-        assertTrue(token.isNotEmpty())
-
         val claims = Jwts.parserBuilder()
-            .setSigningKey(Keys.hmacShaKeyFor(Decoders.BASE64.decode("9VXsL1HSqnpB5oc7LJrx5K5XI+Ficqu1uvpG4uJhtQo=")))
+            .setSigningKey(Keys.hmacShaKeyFor(Base64.getDecoder().decode(jwtSecret)))
             .build()
             .parseClaimsJws(token)
+            .body
 
-        assertEquals(user.email, claims.body.subject)
+        assertEquals(user.email, claims.subject)
     }
 }

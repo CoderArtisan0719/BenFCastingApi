@@ -23,6 +23,7 @@ dependencies {
     implementation("nl.benfcasting.api:logicinterface")
     implementation("nl.benfcasting.api:repositoryinterface")
     implementation("nl.benfcasting.api:model")
+    implementation("nl.benfcasting.api:service")
     implementation("nl.benfcasting.api:serviceinterface")
     testImplementation("nl.benfcasting.api:api")
     testImplementation(kotlin("test"))
