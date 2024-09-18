@@ -1,7 +1,6 @@
 // logic/src/main/kotlin/nl.benfcasting.api.api/UserLogicImpl
 package nl.benfcasting.api.logic
 
-import com.google.inject.Inject
 import io.jsonwebtoken.Jwts
 import io.jsonwebtoken.security.Keys
 import io.jsonwebtoken.SignatureAlgorithm
@@ -16,7 +15,7 @@ import javax.crypto.SecretKey
 import java.util.*
 
 @Service
-class UserLogicImpl @Inject constructor(
+class UserLogicImpl (
     private val userRepository: UserRepository,
     private val userService: UserService,
 ) : UserLogic {

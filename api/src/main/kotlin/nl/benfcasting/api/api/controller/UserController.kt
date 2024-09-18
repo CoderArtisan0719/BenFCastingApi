@@ -5,7 +5,6 @@ import jakarta.validation.ConstraintViolationException
 import jakarta.validation.Valid
 import nl.benfcasting.api.api.dto.tx.LoginRequestDto
 import nl.benfcasting.api.api.dto.tx.LoginResponseDto
-import nl.benfcasting.api.factory.Factory
 import nl.benfcasting.api.logicinterface.UserLogic
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
@@ -18,9 +17,8 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @RequestMapping("/api/auth")
-class UserController(factory: Factory) {
+class UserController(private val userLogic: UserLogic) {
 
-    private var userLogic: UserLogic = factory.resolve<UserLogic>()
 
     @PostMapping("/login")
     fun login(@Valid @RequestBody request: LoginRequestDto): ResponseEntity<LoginResponseDto> {

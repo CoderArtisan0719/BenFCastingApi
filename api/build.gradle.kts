@@ -31,7 +31,6 @@ dependencies {
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("nl.benfcasting.api:logicinterface")
     implementation("nl.benfcasting.api:model")
-    implementation("nl.benfcasting.api:factory")
     implementation("nl.benfcasting.api:service")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
