@@ -25,10 +25,10 @@ class UserLogicImpl (
     override fun login(email: String, password: String): User {
 
         val user = userRepository.findByEmail(email)
-            ?: throw IllegalArgumentException("Voer het juiste e-mailadres in")
+            ?: throw IllegalArgumentException("Uw wachtwoord en e-mailcombinatie zijn niet gevonden")
 
         if (!userService.authenticateUser(password, user.password)) {
-            throw IllegalArgumentException("Voer het juiste wachtwoord in")
+            throw IllegalArgumentException("Uw wachtwoord en e-mailcombinatie zijn niet gevonden")
         }
 
         if (user.type != UserType.admin) {
