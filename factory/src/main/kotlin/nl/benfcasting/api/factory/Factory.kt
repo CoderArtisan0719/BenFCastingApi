@@ -4,7 +4,10 @@ import com.google.inject.AbstractModule
 import com.google.inject.Guice
 import com.google.inject.Injector
 import com.google.inject.name.Names
+import com.google.inject.Provides
 import jakarta.persistence.EntityManager
+import jakarta.persistence.EntityManagerFactory
+import jakarta.persistence.Persistence
 import nl.benfcasting.api.dal.UserDalImpl
 import nl.benfcasting.api.dalinterface.UserDal
 import nl.benfcasting.api.logic.UserLogicImpl
@@ -20,7 +23,6 @@ import org.springframework.core.env.Environment
 
 @Component
 class Factory(
-    private val entityManager: EntityManager,
     private val environment: Environment
 ) : AbstractModule() {
     var injector: Injector = Guice.createInjector(this)
@@ -32,12 +34,17 @@ class Factory(
     override fun configure() {
         val jwtSecret = environment.getProperty("JWT_SECRET")
 
-        bind(EntityManager::class.java).toInstance(entityManager)
         bind(UserDal::class.java).to(UserDalImpl::class.java)
         bind(UserLogic::class.java).to(UserLogicImpl::class.java)
         bind(UserRepository::class.java).to(UserRepositoryImpl::class.java)
         bind(PasswordService::class.java).to(PasswordServiceImpl::class.java)
         bind(UserService::class.java).to(UserServiceImpl::class.java)
         bindConstant().annotatedWith(Names.named("JWT_SECRET")).to(jwtSecret)
+    }
+
+    @Provides
+    private fun provideEntityManager(): EntityManager {
+        val entityManagerFactory: EntityManagerFactory = Persistence.createEntityManagerFactory("benfcastingPU")
+        return entityManagerFactory.createEntityManager()
     }
 }
