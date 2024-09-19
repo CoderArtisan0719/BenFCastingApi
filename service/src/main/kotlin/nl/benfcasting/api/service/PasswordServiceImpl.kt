@@ -1,8 +1,9 @@
 package nl.benfcasting.api.service
 
 import com.google.inject.Singleton
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
+
 import nl.benfcasting.api.serviceinterface.PasswordService
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
 
 @Singleton
 class PasswordServiceImpl : PasswordService {

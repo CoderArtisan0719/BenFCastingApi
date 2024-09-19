@@ -13,8 +13,9 @@ repositories {
 }
 
 dependencies {
+    implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("com.google.inject:guice:7.0.0")
-    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    implementation("jakarta.persistence:jakarta.persistence-api:3.1.0")
     implementation("nl.benfcasting.api:logicinterface")
     implementation("nl.benfcasting.api:logic")
     implementation("nl.benfcasting.api:repositoryinterface")
